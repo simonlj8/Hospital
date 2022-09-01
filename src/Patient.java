@@ -1,31 +1,29 @@
 package edu.lernia.labb3;
-
 import java.lang.String;
 
-
 public class Patient {
-    boolean isSick = false;
+    boolean isSick;
     String name;
     String symptom;
 
     String getSickness;
 
 
-    Patient(String name,  String symptom) {
+    Patient(String name, String symptom) {
         this.name = name;
-       // this.getSickness = getSickness;
+        // this.getSickness = getSickness;
         this.symptom = symptom;
         if (symptom != null) {
-            isSick();
+            setGetSickness();
         }
 
-
     }
-
-  public boolean isSick() {
-       return isSick = true ;
-   }
-
+    public boolean isSick() {
+        return isSick;
+    }
+    private void setGetSickness() {
+        this.isSick = true;
+    }
 
     public Patient(String name) {
         this.name = name;
@@ -43,10 +41,11 @@ public class Patient {
     }
 
     public void takeMedication (Medicine medicine){
-    if(getSickness != null && getSickness.equalsIgnoreCase(medicine.getTreatmentName())) {
-        isSick = false;
-        getSickness = null;
-    }
+        if(symptom != null && symptom.equalsIgnoreCase(medicine.getTreatmentName())) {
+            isSick = false;
+            //    symptom = null;
         }
     }
+}
+
 
